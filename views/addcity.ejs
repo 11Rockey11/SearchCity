@@ -1,0 +1,28 @@
+<html>
+    <%- include("./partials/head.ejs") %>
+    <%- include("./partials/style.ejs") %>
+    <body>
+        <%- include("./partials/nav.ejs") %>
+        <div class="create-city content">
+            <form action="/addcity" method="POST" class="add">
+                <label for="title">City~Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="snippet">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required>
+                <label for="snippet">Famous~food:</label>
+                <input type="text" id="famousfood" name="famousfood" required>
+                <label for="snippet">Fsmous~Places:</label>
+                <input type="text" id="famousplaces" name="famousplaces" required>
+                <label for="snippet">Major~Occupation:</label>
+                <input type="text" id="majoroccupation" name="majoroccupation" required>
+                <label for="snippet">Culture:</label>
+                <input type="text" id="culture" name="culture" required>
+                <label for="snippet">Link:</label>
+                <input type="text" id="link" name="link" required>
+                <label for="body">About~City:</label>
+                <textarea id="about" name="about" required></textarea>
+                <input type="submit" value="ADD">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+    body{
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      font-family:  'Indie Flower', cursive;
+      max-width: 1200px;
+      background-color: #d6ebeba6;
+    }
+    p, h1, h2, h3, a, ul{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: #222;
+    }
+
+    /* nav & footer styles */
+    nav{
+      /* display:block; */
+      justify-content: space-between;
+      margin-bottom: 60px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgb(255, 130, 130);
+      text-transform: uppercase;
+    }
+    nav ul{
+      display:flex;
+      /* justify-content: space-between; */
+      align-items: flex-end;
+    }
+    nav li{
+      list-style-type: none;
+      margin-left: 20px;
+    }
+    nav h1{
+      font-size: 3em;
+      text-align: center;
+    }
+    nav p, nav li{
+      text-align: center;
+      color: #777;
+      font-size: 23px;
+      font-weight:bolder;
+    }
+    nav h1:hover{
+        color: crimson;
+    }
+    nav a:hover{
+        color:brown;
+    }
+    .search{
+        margin-left: 40%;
+    }
+    .search input[type=text]{
+                    
+      padding: 10px 6px 10px 6px;
+      font-size: 20px;
+      border: 2px solid rgba(111, 119, 228, 0.596);
+      box-sizing:content-box;
+        border-radius: 15px;
+            }
+.search input[type=text]:hover{
+                
+       box-shadow: 5px 5px 10px #888888;
+      
+            }
+.search input[type=submit] {
+
+  padding: 7px 16px 7px 16px;
+  box-sizing:content-box;
+  border-radius: 4px;
+      }
+.search input[type=submit]:hover{
+  background-color:rgb(10, 9, 1);
+  color: rgb(12, 241, 43);
+}
+
+
+    /* index styles */
+    .places a{
+      display: block;
+      /* margin: 40px 0; */
+      margin-top: 40px;
+      margin-left: 20%;
+      margin-right: 40%;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color:rgba(48, 47, 47, 0.151);
+      border-left: 6px solid crimson;
+    }
+    .places a:hover h1{
+      color: crimson;
+    }
+    .places p{
+      color: mediumorchid;
+      font-size: 20px;
+      font-weight: bold;
+    }
+.city h2{
+  font-family:'Noto Serif', serif;
+  margin-left: 5%;
+  margin-right: 6%;
+  padding-left: 30px;
+}
+.city p{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5%;
+  margin-right: 6%;
+  padding-left: 30px;
+  letter-spacing: 2px;
+  font-family:'Noto Serif', serif;
+}
+.city h2:hover{
+  box-shadow: 5px 5px 10px #888888;
+  border-radius: 40px;
+  color: red;
+  font-size: 30px;
+}
+.city p:hover{
+  box-shadow: 5px 5px 10px #888888;
+  border-radius: 30px;
+  padding-right: 10px;
+  color: red;
+  font-size: 30px;
+}
+.city a h2:hover{
+  color: blue;
+}
+    /* details styles */
+    .details{
+      position: relative;
+    }
+    .delete{
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 50%;
+      padding: 8px;
+    }
+    .delete:hover{
+      cursor: pointer;
+      box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    }
+
+    /* create styles */
+    .create-city form{
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .create-city input,
+    .create-city textarea{
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+    }
+    .create-city label{
+      display: block;
+      font-weight: bolder;
+      font-size: 20px;
+      margin-top: 24px;
+    }
+    textarea{
+      height: 120px;
+    }
+    .create-city button{
+      margin-top: 20px;
+      background: crimson;
+      color: white;
+      padding: 6px;
+      border: 0;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .create-city input[type=text]{
+                    
+  padding: 10px 60px 10px 6px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: 2px solid rgba(55, 248, 174, 0.596);
+    border-radius: 50px;
+        }
+        .create-city input[type=text]:hover{
+            
+   box-shadow: 5px 5px 10px #888888;
+  
+        }
+        .create-city input[type=submit] {
+
+  padding: 12px 30px ;
+  box-sizing: border-box;
+  border: 3px solid rgba(255, 0, 0, 0.952);
+  border-radius: 4px;
+      }
+
+    .moon{
+     position: absolute;
+     top: 20%;
+     left: 90%;
+     transform: translate(-50%, -50%);
+     height: 20px;
+     width: 20px;
+     box-shadow: -8px 8px 0 8px rgb(22, 21, 21)  ;
+     border-radius:60%;
+   }
