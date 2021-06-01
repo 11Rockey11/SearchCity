@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const City = require('./model/city');
-const dbURI = 'mongodb+srv://bharath:project1@cluster0.xbxcn.mongodb.net/project1?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://dbpassword:project1@cluster0.xbxcn.mongodb.net/yourDbName?retryWrites=true&w=majority';
 
 //invoking express app;
 const app = express();
