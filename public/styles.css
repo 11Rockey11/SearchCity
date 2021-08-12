@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Mate+SC&family=Roboto+Slab&display=swap');
     body{
       max-width: 1200px;
       margin: 20px auto;
       padding: 0 20px;
-      font-family:  'Indie Flower', cursive;
-      max-width: 1200px;
+      /* font-family:  'Indie Flower', cursive; */
+      /* font-family: 'Baloo Tammudu 2', cursive; */
+      font-family: 'Baloo Tammudu 2', cursive;
+      font-family: 'Mate SC', serif;
+      font-family: 'Roboto Slab', serif;
+            max-width: 1200px;
       background-color: #d6ebeba6;
     }
     p, h1, h2, h3, a, ul{
@@ -90,45 +96,20 @@
       background-color:rgba(48, 47, 47, 0.151);
       border-left: 6px solid crimson;
     }
+    .places a:hover{
+      box-shadow: 5px 5px 10px rgba(0, 140, 186, 0.5);
+
+    }
     .places a:hover h1{
       color: crimson;
+      
     }
     .places p{
       color: mediumorchid;
       font-size: 20px;
       font-weight: bold;
     }
-.city h2{
-  font-family:'Noto Serif', serif;
-  margin-left: 5%;
-  margin-right: 6%;
-  padding-left: 30px;
-}
-.city p{
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 5%;
-  margin-right: 6%;
-  padding-left: 30px;
-  letter-spacing: 2px;
-  font-family:'Noto Serif', serif;
-}
-.city h2:hover{
-  box-shadow: 5px 5px 10px #888888;
-  border-radius: 40px;
-  color: red;
-  font-size: 30px;
-}
-.city p:hover{
-  box-shadow: 5px 5px 10px #888888;
-  border-radius: 30px;
-  padding-right: 10px;
-  color: red;
-  font-size: 30px;
-}
-.city a h2:hover{
-  color: blue;
-}
+
     /* details styles */
     .details{
       position: relative;
@@ -163,6 +144,9 @@
       font-size: 20px;
       margin-top: 24px;
     }
+.city img{
+  size: 50px;
+}
     textarea{
       height: 120px;
     }

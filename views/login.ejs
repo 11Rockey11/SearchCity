@@ -1,0 +1,41 @@
+<html>
+    <%- include("./partials/head.ejs") %>
+    <%- include("./partials/style.ejs") %>
+
+    <body>
+        <h1>Search~City Login</h1>
+        <form  id="register" action="">
+            <input type="text" autocomplete="off" id="username" placeholder="Username" required>
+            <input type="password" autocomplete="off" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <script>
+            const form = document.getElementById('register');
+            form.addEventListener('submit',registerUser)
+
+           async function registerUser(event)
+            {
+                event.preventDefault()
+                const username = document.getElementById('username').value
+                const password = document.getElementById('password').value
+                var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+                if(!password.match(decimal)) 
+                { 
+                    alert('Password must contain One Capital letter ,one special character ,one number,Length should be greater than 8 and less than equal to 15 ')
+                      return false;
+                }
+            const result = await fetch('/api/register',{
+                method : 'POST',
+                headers: {
+                    'Content-Type' :  'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            }).then((res) => res.json())
+            .then(data => window.location.href = data.redirect)
+        }
+        </script>
+    </body>
+</html>

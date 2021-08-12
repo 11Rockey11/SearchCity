@@ -4,7 +4,7 @@
     <body>
         <%- include("./partials/nav.ejs") %>
         <div class="create-city content">
-            <form action="/addcity" method="POST" class="add">
+            <form action="/addcity" method="POST" class="add" enctype="multipart/form-data">
                 <label for="title">City~Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="snippet">Pincode:</label>
@@ -21,8 +21,13 @@
                 <input type="text" id="link" name="link" required>
                 <label for="body">About~City:</label>
                 <textarea id="about" name="about" required></textarea>
+                <label for="image" class="text-white">Upload image</label>
+                <input type="file" name="img" id="image" class="text-white">
                 <input type="submit" value="ADD">
             </form>
+            <script>
+                
+            </script>
         </div>
     </body>
 </html>

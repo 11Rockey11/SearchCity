@@ -1,6 +1,118 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
-<%- include("./partials/style.ejs") %>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Mate+SC&family=Roboto+Slab&display=swap');
+    body{
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      /* font-family:  'Indie Flower', cursive; */
+      /* font-family: 'Baloo Tammudu 2', cursive; */
+      font-family: 'Baloo Tammudu 2', cursive;
+      font-family: 'Mate SC', serif;
+      font-family: 'Roboto Slab', serif;
+            max-width: 1200px;
+      background-color: #d6ebeba6;
+    }
+    p, h1, h2, h3, a, ul{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: #222;
+    }
+
+    /* nav & footer styles */
+    nav{
+      /* display:block; */
+      justify-content: space-between;
+      margin-bottom: 60px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgb(255, 130, 130);
+      text-transform: uppercase;
+    }
+    nav ul{
+      display:flex;
+      /* justify-content: space-between; */
+      align-items: flex-end;
+    }
+    nav li{
+      list-style-type: none;
+      margin-left: 20px;
+    }
+    nav h1{
+      font-size: 3em;
+      text-align: center;
+    }
+    nav p, nav li{
+      text-align: center;
+      color: #777;
+      font-size: 23px;
+      font-weight:bolder;
+    }
+    nav h1:hover{
+        color: crimson;
+    }
+    nav a:hover{
+        color:brown;
+    }
+    .city h2{
+  font-family:'Noto Serif', serif;
+  margin-left: 5%;
+  margin-right: 6%;
+  padding-left: 30px;
+}
+.city p{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5%;
+  margin-right: 6%;
+  padding-left: 30px;
+  letter-spacing: 2px;
+  font-family:'Noto Serif', serif;
+}
+.city h2:hover{
+  /* box-shadow: 5px 5px 10px #888888; */
+  border-radius: 40px;
+  color: Blue;
+  font-size: 30px;
+  
+}
+.city p:hover{
+  /* box-shadow: 5px 5px 10px #888888; */
+  border-radius: 30px;
+  padding-right: 10px;
+  color: red;
+  font-size: 30px;
+}
+.city a h2:hover{
+  color: blue;
+}
+.city img{
+  border-radius: 8px;
+  border: 5px solid black;
+  /* padding: 5px; */
+  width: 300px;
+  height: 300px;
+  margin-left: 10%;
+}
+.city img:hover {
+  box-shadow: 0 0 10px 10px rgba(0, 140, 186, 0.5);
+}
+.delete{
+      padding: 10px 6px 10px 6px;
+      font-size: 20px;
+      margin-left: 80%;
+      border: 2px solid rgba(111, 119, 228, 0.596);
+
+      border-radius: 15px;
+      background-color: lightcoral;
+      color:cornsilk;
+      box-shadow: 0 0 10px 10px rgba(0, 140, 186, 0.5);
+}
+</style>
 <body>
   <%- include("./partials/nav.ejs") %>
  
@@ -20,6 +132,30 @@
     <p>About~City : <%=city.about %></p>
     <br>
     <a href="<%=city.link%>" target="_blank"><h2>Link : <%=city.link %></h2></a>
+    <br>
+    <h2>Image:</h2>
+    <br>
+    <% if(image!=null){%>
+    <img src="/uploads/<%= image.img%>" alt="">
+    <% } else { %>
+      <img src="/uploads/download.png" alt="">
+      <% } %>
+    <br>
+    <a class="delete" data-doc="<%=city._id %>">Delete</a>
   </div>
+  <script>
+    const trashcan = document.querySelector('a.delete');
+    
+    trashcan.addEventListener('click', (e) => {
+      const endpoint = `/delete/${trashcan.dataset.doc}`;
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
+    
+  </script>
 </body>
 </html>

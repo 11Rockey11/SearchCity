@@ -1,6 +1,15 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
 <%- include("./partials/style.ejs") %>
+<style>
+  img
+  {
+    border-radius: 8px;
+  border: 5px solid black;
+  /* padding: 5px; */
+  width: 100px;
+  }
+</style>
 <body>
   <%- include("./partials/nav.ejs") %>
   <div class="search">
@@ -15,13 +24,13 @@
     <h2>Recently~Added</h2>
     <% if (city.length > 0) { %>
       <% city.forEach(x => { %>
-        <a href="<%=x._id%>">
+        <a href="/mat/<%=x._id%>">
         <h1 class="title"><%= x.name %></h1>
         <p class="snippet"><%= x.pincode %></p>
         </a>
       <% }) %>
     <% } else { %>
-      <p>There are no city added in name of <%= name%>...</p>
+      <p>There are no city to display</p>
     <% } %>
   </div>
 </body>
