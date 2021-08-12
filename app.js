@@ -9,7 +9,6 @@ const multer = require('multer');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 var ObjectId = mongoose.Types.ObjectId();
-const dbURI = 'mongodb+srv://bharath:project1@cluster0.xbxcn.mongodb.net/project1?retryWrites=true&w=majority';
 =======
 const dbURI = 'mongodb+srv://dbpassword:project1@cluster0.xbxcn.mongodb.net/yourDbName?retryWrites=true&w=majority';
 >>>>>>> a8adcb5beceb80835e6d15a34e6fadc9adb756cd
